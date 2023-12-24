@@ -19,6 +19,7 @@
 * [11. Update IDM](#11-update-idm)
   - [11.1 Update Canboot](#111-update-canboot)
   - [11.2 Update Firmware](#112-update-firmware)
+* [12. Set to USB](#12-set-to-usb)
 
 ## 1. Mount IDM
 Mount the IDM-Scanner to your 3D printer toolhead, nominally 2.6mm recessed from the nozzle in Z.
@@ -244,3 +245,10 @@ Execute the following command:
 ```
 cd ~/katapult/scripts python3 flashtool.py -i can0 -f ~/IDM/Firmware/IDM_CAN_8kib_offset_1M.bin -u <found uuid>
 ```
+
+## 12. Set to USB
+If you want to change to USB communication, you can flash the USB firmware:
+```
+cd ~/katapult/scripts python3 flashtool.py -i can0 -f ~/IDM/Firmware/IDM_USB_8kib_offset.bin -u <found uuid>
+```
+And solder the mode setting jumper on the back of the IDM to the USB side.
